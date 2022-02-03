@@ -1,14 +1,41 @@
 import { StyleSheet } from 'react-native';
-
-import EditScreenInfo from '../components/EditScreenInfo';
+import AgoraUIKit from 'agora-rn-uikit';
+import * as Linking from 'expo-linking';
 import { Text, View } from '../components/Themed';
+import { useEffect, useState } from 'react';
 
 export default function TabTwoScreen() {
+  const [channel, setChannel] = useState('')
+  Linking.addEventListener('url', (u) => {
+    let query = Linking.parse(u.url).queryParams
+    if(query.channel) {
+      setChannel(query.channel)
+    }
+  })
+  useEffect(() => {
+    const fn = async () => {
+      let link
+      link = await Linking.getInitialURL();
+      if (link) {
+        let query = Linking.parse(link).queryParams
+        if(query.channel) {
+          console.log('joining channel', query.channel)
+          setChannel(query.channel)
+        }
+      }
+    }
+    fn()
+  }, [])
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
+      {channel ?
+        <AgoraUIKit
+          styleProps={{ UIKitContainer: { flex: 1, height: '100%', width: '100%', backgroundColor: '#ff00ff' } }}
+          rtcProps={{ appId: '30a6bc89994d4222a71eba01c253cbc7', channel: channel }}
+          callbacks={{EndCall: () => {setChannel('')}}}
+        /> :
+        <Text> Didn't get Channel </Text>
+      }
     </View>
   );
 }

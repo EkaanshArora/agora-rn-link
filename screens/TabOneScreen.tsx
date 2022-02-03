@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-
+import * as Linking from 'expo-linking';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
@@ -9,7 +9,8 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
     <View style={styles.container}>
       <Text style={styles.title}>Tab One</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+      {/* <EditScreenInfo path="/screens/TabOneScreen.tsx" /> */}
+      <Text onPress={()=>{Linking.openURL('uikit://two?channel=test')}}>Join test channel</Text>
     </View>
   );
 }

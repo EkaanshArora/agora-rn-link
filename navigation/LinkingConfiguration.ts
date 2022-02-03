@@ -11,6 +11,7 @@ import { RootStackParamList } from '../types';
 
 const linking: LinkingOptions<RootStackParamList> = {
   prefixes: [Linking.makeUrl('/')],
+  // prefixes: ['https://app.example.com'],
   config: {
     screens: {
       Root: {
