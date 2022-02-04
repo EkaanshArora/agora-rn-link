@@ -22,7 +22,9 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.ekaansh.uikitlink",
       "infoPlist": {
-        "LSApplicationQueriesSchemes": ["uikit"]
+        "LSApplicationQueriesSchemes": ["uikit"],
+        "NSCameraUsageDescription": "camera perm",
+        "NSMicrophoneUsageDescription": "mic perm"
       },
       "associatedDomains": ["applinks:unilink-huc1iw3lr-ekaansh.vercel.app"]
     },

@@ -36,6 +36,18 @@
         <category android:name="android.intent.category.BROWSABLE"/>
         <category android:name="android.intent.category.DEFAULT"/>
       </intent-filter>
+      <intent-filter>
+        <data android:scheme="https" android:host="unilink-huc1iw3lr-ekaansh.vercel.app"/>
+        <action android:name="android.intent.action.VIEW"/>
+        <category android:name="android.intent.category.BROWSABLE"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+      </intent-filter>
+      <intent-filter>
+        <data android:scheme="https" android:host="unilink-huc1iw3lr-ekaansh.vercel.app"/>
+        <action android:name="android.intent.action.VIEW"/>
+        <category android:name="android.intent.category.BROWSABLE"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+      </intent-filter>
     </activity>
     <activity android:name="com.facebook.react.devsupport.DevSettingsActivity"/>
   </application>
