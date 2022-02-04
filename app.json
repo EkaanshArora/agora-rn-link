@@ -20,14 +20,31 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.ekaansh.uikitlink"
+      "bundleIdentifier": "com.ekaansh.uikitlink",
+      "infoPlist": {
+        "LSApplicationQueriesSchemes": ["uikit"]
+      },
+      "associatedDomains": ["applinks:unilink-huc1iw3lr-ekaansh.vercel.app"]
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.ekaansh.uikitlink"
+      "package": "com.ekaansh.uikitlink",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data":{
+              "scheme": "https",
+              "host": "unilink-huc1iw3lr-ekaansh.vercel.app"
+            },
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ]
     },
     "web": {
       "favicon": "./assets/images/favicon.png"

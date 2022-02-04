@@ -5,11 +5,11 @@
  */
 
 import { LinkingOptions } from '@react-navigation/native';
-
+// import * as Linking from 'expo-linking';
 import { RootStackParamList } from '../types';
 
 const linking: LinkingOptions<RootStackParamList> = {
-  // prefixes: [Linking.makeUrl('/')],
+  // prefixes: [Linking.createURL('/')],
   prefixes: ['https://unilink-huc1iw3lr-ekaansh.vercel.app'],
   config: {
     screens: {
