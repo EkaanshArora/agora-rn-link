@@ -31,7 +31,7 @@ export default function TabTwoScreen() {
       {channel ?
         <AgoraUIKit
           styleProps={{ UIKitContainer: { flex: 1, height: '100%', width: '100%', backgroundColor: '#ff00ff' } }}
-          rtcProps={{ appId: '30a6bc89994d4222a71eba01c253cbc7', channel: channel }}
+          rtcProps={{ appId: '', channel: channel }}
           callbacks={{EndCall: () => {setChannel('')}}}
         /> :
         <Text> Didn't get Channel </Text>
